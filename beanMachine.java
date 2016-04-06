@@ -24,8 +24,20 @@ public class beanMachine extends Application {
 		//create some inside lines
 		Line[] line = new Line[7];
 		for(int i=0;i<7;i++){
-			line[i] = new Line(100+i*(300/7),300, 100+i*(300/7),400);
+			line[i] = new Line(100+(i+1)*(300/8),300, 100+(i+1)*(300/8),400);
 			pane.getChildren().add(line[i]);	
+		}
+
+		//Creat some dots
+		Circle[] circle = new Circle[28];
+		for(int j=1;j<=7;j++){
+			for(int i=0;i<j;i++){
+				circle[i]=new Circle();
+				circle[i].setRadius(5.0);
+				circle[i].setLayoutX(100+150/8+(8-j)*(150/8)+i*(300/8));
+				circle[i].setLayoutY(100+j*(200/7));
+				pane.getChildren().add(circle[i]);
+			}
 		}
 
 		// Create a scene and place it in the stage
